@@ -74,6 +74,41 @@
     echo"<h1>Esfera</h1>";
     $volume_da_esfera = (4/3)* $pi * ($r**3);
     echo"o volume da esfera é $volume_da_esfera";
+    echo"<hr>";
+
+    //7° Média Aritmética
+    echo"<h1>Média Aritmética</h1>";
+    $n1 = 7;
+    $n2 = 8;
+    $n3 = 5;
+
+    $p1 = 2;
+    $p2 = 3;
+    $p3 = 1;
+
+    $aritmetrica = (($n1*$p1) + ($n2*$p2) + ($n3*$p3))/($p1 + $p2 + $p3);
+
+    echo"A média ponderada é: $aritmetrica";
+    echo"<hr>";
+
+    //8° Valor futuro
+    echo"<h1>Calculando os juros</h1>";
+    $capital = 1200;
+    $juros = 0.10;
+    $periodo = 6;
+
+    $valor_final = $capital * ((1 + $juros)**$periodo);
+    
+    echo"O valor final será de $valor_final";
+    echo"<hr>";
+
+    //9° Temperatura de celsius
+    echo"<h1>convertendo celsius para fahrenheit</h1>";
+    $celsiu = 30;
+    $fahrenheit = (9/5)*$celsiu+32;
+
+    echo"$celsiu celsius em fahrenheit é $fahrenheit °";
+    echo"<hr>";
 
     ?>
 </body>
