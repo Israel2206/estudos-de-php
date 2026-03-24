@@ -110,6 +110,45 @@
     echo"$celsiu celsius em fahrenheit é $fahrenheit °";
     echo"<hr>";
 
+    //10° Distancia entre dois ponto
+    echo"<h1>Distancia entre dois pontos</h1>";
+    $x1 = 1;
+    $x2 = 4;
+    $y1 = 2;
+    $y2 = 6;
+
+    $carteziano = sqrt((($x2-$x1)**2)+(($y2-$y1)**2));
+
+    echo"<h3>$carteziano</h3>";
+    echo"<hr>";
+    
+    //11°Área de um trapezio
+    echo"<h1>Calculando a área de um trapezio</h1>";
+    $B_t = 11;
+    $b_t = 7;
+    $h_t = 6;
+    $trapezio = (($B_t + $b_t)*$h_t)/2;
+    echo"a área do trapezio é $trapezio";
+    echo"<hr>";
+
+    //12° Montante acumulado
+    echo"<h1>Resultado de um montante acumulado:</h1>";
+    $p = 1300;
+    $i = 0.33;
+    $t = 17;
+
+    $montante = $p*((1+$i)*$t);
+    echo"O valor do montante é $montante";
+    echo"<hr>";
+
+    //13° Progressão aritmetrica
+    echo"<h1>A soma dos primeiros termos de uma PA</h1>";
+    $a1 = 2;
+    $an = 4;
+    $n_pa = 6;
+    $Sn = ($n_pa * ($a1+$an))/2;
+    echo"$Sn";
+    echo"<hr>";
     ?>
 </body>
 </html>
