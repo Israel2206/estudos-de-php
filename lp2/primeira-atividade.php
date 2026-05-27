@@ -10,24 +10,26 @@
     //@Breno Israel - 3.18.2i
     //@Data-18/03/2026
     // 1° Triangulo
-    echo"<h1>Triangulo</h1>";
+    echo "<h1>Triângulo</h1>";
+
     $base = 4;
     $altura = 3;
     $lado = 5;
-    echo"Base: $base<br>";
-    echo"Lado 1: $lado<br>";
-    echo"Altura: $altura<br>";
-    $area_t = ($base*$altura)/2;
-    $teorema = (($base/2) ** 2) + ($altura**2);
-    $raiz = sqrt($teorema);
-    $perimetro_t = ($raiz*2)+$base;
-    echo"Área: $area_t <br>";
-    echo"Perímetro: $perimetro_t<br>";
-    echo"Tamanho do lado isósceles: $raiz";
-    echo"<hr>";
+
+    echo "Base: $base<br>";
+    echo "Lado: $lado<br>";
+    echo "Altura: $altura<br>";
+
+    $area_t = ($base * $altura) / 2;
+    $perimetro_t = ($lado * 2) + $base;
+
+    echo "Área: $area_t<br>";
+    echo "Perímetro: $perimetro_t<br>";
+
+    echo "<hr>";
     // 2° Equação de Segundo grau
     echo"<h1>baskara</h1>";
-    echo"<h2>X²+-5X+6 = 0</h2>";
+    echo"<h2>X²-5X+6 = 0</h2>";
     $a = 1;
     $b = -5;
     $c = 6;
