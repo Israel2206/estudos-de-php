@@ -58,59 +58,59 @@
 
             <div>
                 <label for="Ano">Ano</label>
-                <input type="number" id="" />
+                <input type="number" id="ano" name="ano" />
             </div>
             <div>
                 <label for="Placa">Placa</label>
-                <input type="text" id="" />
+                <input type="text" id="placa" name="placa" />
             </div>
             <div>
                 <label for="RENAVAM">RENAVAM</label>
-                <input type="text" id="" />
+                <input type="text" id="renavam" name="renavam"/>
             </div>
             <div>
                 <label for="Chassi">Chassi</label>
-                <input type="text" id="" />
+                <input type="text" id="chassi" name="chassi"/>
             </div>
             <div>
                 <label for="Valor">Valor</label>
-                <input type="text" id="posto" name="posto">
+                <input type="text" id="valor" name="valor">
             </div>
             <div>
                 <label for="Data_de_compra">Data da Compra</label>
-                <input type="date"id="">
+                <input type="date"id="data_c" name="data_c">
             </div>
             <div>
                 <label for="Hora da Compra">Hora da Compra</label>    
-                <input type="time">
+                <input type="time" $id="hora_c" name="hora_c">
             </div>
             <div>
                 <label for="Data/Hora do Cadastro">Data/Hora do Cadastro</label>    
-                <input type="datetime" id="">
+                <input type="datetime" id="datah" name="datah">
             </div>
             <div>
                 <label for="Mês da Revisão">Mês da Revisão</label>    
-                <input type="date" id="">
+                <input type="date" id="mesr" name="mesr">
             </div>
             <div>
                 <label for="Semana da Revisão">Semana da Revisão</label>    
-                <input type="date">
+                <input type="date" id="semana" name="semana">
             </div>
             <div>
                 <label for="Cor">Cor</label>    
-                <input type="text">
+                <input type="text" id="cor" name="cor">
             </div>
             <div>
                 <label for="Quilometragem">Quilometragem</label>    
-                <input type="range" id="">
+                <input type="range" id="km" name="km">
             </div>
             <div>
                 <label for="Link do Anúncio">Link do Anúncio</label>   
-                <input type="text"> 
+                <input type="text" id="link" name="link"> 
             </div>
             <div>
                 <label for="Foto do Veículo">Foto do Veículo</label>    
-                <input type="file" id="">
+                <input type="file" id="file" name="file">
             </div>
 
         </div>
