@@ -4,35 +4,36 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>veimkulum</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <form action="" method="post">
+    <form action="ukeage.php" method="post">
 
         <div class="dados">
             <div>
                 <label for="nome">Nome:</label>
-                <input type="text" id="nome" />
+                <input type="text" id="nome" name="nome" placeholder="Nome">
             </div>
     
             <div>
                 <label for="cpf">CPF</label>
-                <input type="text" name="cpf" id="">
+                <input type="text" name="cpf" id="cpf">
             </div>
     
             <div>
                 <label for="email">E-mail:</label>
-                <input type="email" id="email" />
+                <input type="email" id="email" name="email">
             </div>
     
             <div>
                 <label for="telefone">Telefone</label>
-                <input type="tel" name="telefone" id="">
+                <input type="tel" name="telefone" id="telefone">
             </div>
     
             <div>
                 <label for="data_nasc">Data de Nascimento</label>
-                <input type="date" name="data_nasc" id="">
+                <input type="date" name="data_nasc" id="data_nasc">
             </div>
         </div>
 
@@ -52,7 +53,7 @@
 
             <div>
                 <label for="Modelo">Modelo</label>
-                <input type="text" id=""/>
+                <input type="text" id="modelo" name="modelo">
             </div>
 
             <div>
