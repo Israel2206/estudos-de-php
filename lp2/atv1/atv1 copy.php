@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>veimkulum</title>
+</head>
+<body>
+
+    <form action="ukeage.php" method="post" enctype="multipart/form-data">
+    
+        <div class="dados">
+            <div>
+                <label for="nome">Nome:</label>
+                <input type="text" id="nome" name="nome" placeholder="Nome">
+            </div>
+    
+            <div>
+                <label for="cpf">CPF</label>
+                <input type="text" name="cpf" id="cpf">
+            </div>
+    
+            <div>
+                <label for="email">E-mail:</label>
+                <input type="email" id="email" name="email">
+            </div>
+    
+            <div>
+                <label for="telefone">Telefone</label>
+                <input type="tel" name="telefone" id="telefone">
+            </div>
+    
+            <div>
+                <label for="data_nasc">Data de Nascimento</label>
+                <input type="date" name="data_nasc" id="data_nasc">
+            </div>
+        </div>
+
+        <hr>
+
+        <div>
+
+            <div>
+                <label for="Marca">Marca</label>
+                <select name="Marca" id="Marca">
+                    <option value="Fiat">Fiat</option>
+                    <option value="Ford">Ford</option>
+                    <option value="Uno">Uno</option>
+                    <option value="Outro">Outro</option>
+                </select>
+            </div>
+
+            <div>
+                <label for="Modelo">Modelo</label>
+                <input type="text" id="modelo" name="modelo">
+            </div>
+
+            <div>
+                <label for="Ano">Ano</label>
+                <input type="number" id="ano" name="ano" />
+            </div>
+            <div>
+                <label for="Placa">Placa</label>
+                <input type="text" id="placa" name="placa" />
+            </div>
+            <div>
+                <label for="RENAVAM">RENAVAM</label>
+                <input type="text" id="renavam" name="renavam"/>
+            </div>
+            <div>
+                <label for="Chassi">Chassi</label>
+                <input type="text" id="chassi" name="chassi"/>
+            </div>
+            <div>
+                <label for="Valor">Valor</label>
+                <input type="text" id="valor" name="valor">
+            </div>
+            <div>
+                <label for="Data_de_compra">Data da Compra</label>
+                <input type="date"id="data_c" name="data_c">
+            </div>
+            <div>
+                <label for="Hora da Compra">Hora da Compra</label>    
+                <input type="time" $id="hora_c" name="hora_c">
+            </div>
+            <div>
+                <label for="Data/Hora do Cadastro">Data/Hora do Cadastro</label>    
+                <input type="datetime" id="datah" name="datah">
+            </div>
+            <div>
+                <label for="Mês da Revisão">Mês da Revisão</label>    
+                <input type="date" id="mesr" name="mesr">
+            </div>
+            <div>
+                <label for="Semana da Revisão">Semana da Revisão</label>    
+                <input type="date" id="semana" name="semana">
+            </div>
+            <div>
+                <label for="Cor">Cor</label>    
+                <input type="text" id="cor" name="cor">
+            </div>
+            <div>
+                <label for="Quilometragem">Quilometragem</label>    
+                <input type="range" id="km" name="km">
+            </div>
+            <div>
+                <label for="Link do Anúncio">Link do Anúncio</label>   
+                <input type="text" id="link" name="link"> 
+            </div>
+            <div>
+                <label for="Foto do Veículo">Foto do Veículo</label>    
+                <input type="file" id="file" name="file">
+            </div>
+
+        </div>
+        <hr>
+        
+        <div>
+            <div>
+                <h3>Combustível</h3>
+                
+                <input type="radio" id="gasolina" name="combustivel" value="gasolina">
+                <label for="gasolina">Gasolina</label>
+        
+                <input type="radio" id="etanol" name="combustivel" value="etanol">
+                <label for="etanol">Etanol</label>
+        
+                <input type="radio" id="flex" name="combustivel" value="flex">
+                <label for="flex">Flex</label>
+        
+                <input type="radio" id="diesel" name="combustivel" value="diesel">
+                <label for="diesel">Diesel</label>
+        
+                <input type="radio" id="eletrico" name="combustivel" value="eletrico">
+                <label for="eletrico">Elétrico</label>
+        
+                <input type="radio" id="hibrido" name="combustivel" value="hibrido">
+                <label for="hibrido">Híbrido</label>
+            </div>
+        </div>
+            
+        <hr>
+        
+        <div>
+            <div>
+                <h3>Escolha os opcionais do carro:</h3>
+                
+                <input type="checkbox" name="opcionais" value="ar-condicionado">
+                <label for="ar">Ar Condicionado</label><br>
+            
+                <input type="checkbox" name="opcionais" value="direcao-eletrica">
+                <label for="trava">Direção Hídraulica</label><br>
+            
+                <input type="checkbox" name="opcionais" value="airbag">
+                <label for="teto">Airbag</label><br>
+
+                <input type="checkbox"  name="opcionais" value="abs">
+                <label for="teto">ABS</label><br>
+
+                <input type="checkbox" name="opcionais" value="multimidia">
+                <label for="teto">Multimídia</label><br>
+
+                <input type="checkbox" name="opcionais" value="teto-solar">
+                <label for="teto">Teto Solar</label>
+
+            </div>
+        </div>
+        
+        <hr>
+        
+        <div>
+            <div>
+                <h3>Opicionais</h3>
+                <textarea name="opcionais" id="opcionais" cols="30" rows="5"></textarea>
+            </div>
+        </div>
+
+        <div class="button">
+            <button type="submit">Enviar sua mensagem</button>
+        </div>
+
+    </form>
+</body>
+</html>
