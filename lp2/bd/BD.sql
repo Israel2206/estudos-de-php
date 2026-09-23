@@ -87,8 +87,10 @@ INSERT INTO venda (id_cliente, id_produto, quantidade, data_venda) VALUES
 -- 3º Questão ) -   manipulação de tabelas/dados- Executar as alterações
 -- A) Alter Table – excluir coluna
 ALTER TABLE produto DROP COLUMN categoria;
+
 -- B) Alter Table – adicionar coluna
-ALTER TABLE produto ADD COLUMN data_cadastro DATE; --Por que está acontecendo esse erro?
+ALTER TABLE produto ADD COLUMN data_cadastro DATE; 
+--Por que está acontecendo esse erro? Por conta que já tem uma coluna com o nome data_cadastro, por isso não vai
 ALTER TABLE cliente ADD COLUMN data_registro TIMESTAMP DEFAULT CURRENT_TIMESTAMP;
 -- C) Alter Table – mudar nome de coluna
 ALTER TABLE produto CHANGE COLUMN nome titulo VARCHAR(100);
@@ -97,10 +99,11 @@ ALTER TABLE cliente CHANGE COLUMN telefone celular VARCHAR(20);
 ALTER TABLE produto MODIFY COLUMN marca VARCHAR(100);
 ALTER TABLE cliente MODIFY COLUMN email VARCHAR(150);
 -- E) Delete – excluir linha específica -
-DELETE FROM produto WHERE id = 4; -- Qual o erro? O que fazer para excluir esse produto?
+DELETE FROM produto WHERE id = 4; 
+-- Qual o erro? O que fazer para excluir esse produto? Por conta que não especificamos o nome direito, colocamos apenas id em vez de colocar id_pro.
 --F) Update – atualizar valores
-UPDATE produto SET preco = 3600 WHERE id = 1;
-UPDATE cliente SET nome = 'Maria Silva', email = 'mariasilva@email.com' WHERE id = 2;
+UPDATE produto SET preco = 3600 WHERE id_pro = 1;
+UPDATE cliente SET nome = 'Maria Silva', email = 'mariasilva@email.com' WHERE id_cli = 2;
 -- 4) Consultas (SELECTs) com múltiplas tabelas
 -- 1) Listar todas as vendas com nome do cliente e produto.
 -- 2) Exibir cliente, cidade e produto vendidos na data de 2023-02-15.
