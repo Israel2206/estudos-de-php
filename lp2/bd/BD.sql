@@ -85,9 +85,6 @@ INSERT INTO venda (id_cliente, id_produto, quantidade, data_venda) VALUES
 (1, 4, 3, '2023-03-20'),(4, 3, 1, '2023-02-15');
 
 -- 3º Questão ) -   manipulação de tabelas/dados- Executar as alterações
--- A) Alter Table – excluir coluna
-ALTER TABLE produto DROP COLUMN categoria;
-
 -- B) Alter Table – adicionar coluna
 ALTER TABLE produto ADD COLUMN data_cadastro DATE; 
 --Por que está acontecendo esse erro? Por conta que já tem uma coluna com o nome data_cadastro, por isso não vai
@@ -100,7 +97,8 @@ ALTER TABLE produto MODIFY COLUMN marca VARCHAR(100);
 ALTER TABLE cliente MODIFY COLUMN email VARCHAR(150);
 -- E) Delete – excluir linha específica -
 DELETE FROM produto WHERE id = 4; 
--- Qual o erro? O que fazer para excluir esse produto? Por conta que não especificamos o nome direito, colocamos apenas id em vez de colocar id_pro.
+-- Qual o erro? O que fazer para excluir esse produto? 
+-- Por conta que não especificamos o nome direito, colocamos apenas id em vez de colocar id_pro.
 --F) Update – atualizar valores
 UPDATE produto SET preco = 3600 WHERE id_pro = 1;
 UPDATE cliente SET nome = 'Maria Silva', email = 'mariasilva@email.com' WHERE id_cli = 2;
@@ -135,4 +133,3 @@ select endereco.logradouro, endereco.numero, endereco.bairro, endereco.cidade, e
 
 -- 10) total de vendas (r$) por cidade
 select endereco.cidade, sum(venda.quantidade * produto.preco) as total_vendas from venda join produto on venda.id_produto = produto.id_pro join endereco on venda.id_cliente = endereco.id_cliente group by endereco.cidade;
-
