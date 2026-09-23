@@ -1,0 +1,114 @@
+-- Atividade com 4 tabelas
+create database turma;
+use turma;
+
+-- 1) Criação das tabelas
+
+-- Tabela de clientes
+CREATE TABLE cliente (
+id_cli INT AUTO_INCREMENT PRIMARY KEY,
+nome VARCHAR(100) NOT NULL,
+email VARCHAR(100),
+telefone VARCHAR(20)
+);
+
+-- Tabela de produto
+CREATE TABLE produto (
+    id_pro INT PRIMARY KEY AUTO_INCREMENT,
+    nome VARCHAR(100),
+    marca VARCHAR(50),
+    preco DECIMAL(10,2),
+    categoria VARCHAR(50),
+    data_cadastro DATE
+);
+
+
+-- Tabela de endereços
+CREATE TABLE endereco (
+id_end INT AUTO_INCREMENT PRIMARY KEY,
+id_cliente INT NOT NULL,
+logradouro VARCHAR(150) NOT NULL,
+numero VARCHAR(10),
+bairro VARCHAR(80),
+cidade VARCHAR(80),
+estado CHAR(2),
+cep VARCHAR(10), 
+FOREIGN KEY (id_cliente) REFERENCES cliente(id_cli)
+);
+
+-- Venda
+CREATE TABLE venda (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    id_cliente INT,
+    id_produto INT,
+    quantidade INT,
+    data_venda DATE,
+    FOREIGN KEY (id_cliente) REFERENCES cliente(id_cli),
+    FOREIGN KEY (id_produto) REFERENCES produto(id_pro)
+);
+
+
+-- 2º Questão ) -  Inserção de dados
+-- ============================================================
+-- CADASTRO DE CLIENTES
+-- ============================================================
+
+INSERT INTO cliente (nome, email, telefone) VALUES
+('João Silva', 'joao@email.com', '75999990001'),
+('Maria Santos', 'maria@email.com', '75999990002'),
+('Pedro Oliveira', 'pedro@email.com', '75999990003'),
+('Ana Souza', 'ana@email.com', '75999990004'),
+('Carlos Lima', 'carlos@email.com', '75999990005');
+
+-- ============================================================
+-- CADASTRO DE ENDEREÇOS
+-- ============================================================
+INSERT INTO endereco
+(id_cliente, logradouro, numero, bairro, cidade, estado, cep)
+VALUES
+(5, 'Rua das Flores', '100', 'Centro', 'Seabra', 'BA', '46900-000'),
+(4, 'Avenida Brasil', '250', 'Boa Vista', 'Seabra', 'BA', '46900-100'),
+(3, 'Rua do Comércio', '45', 'Centro', 'Iraquara', 'BA', '46980-000'),
+(2, 'Rua Principal', '780', 'São José', 'Lençóis', 'BA', '46960-000'),
+(1, 'Avenida Chapada', '120', 'Centro', 'Palmeiras', 'BA', '46930-000');
+
+-- Produtos
+INSERT INTO produto (nome, marca, preco, categoria, data_cadastro) VALUES
+('Notebook X200', 'Dell', 350, 'Informática', '2021-05-12'),
+('Galaxy S22', 'Samsung', 450, 'Celular', '2022-08-10'),
+('Smart TV 55', 'LG', 320, 'Eletrônico', '2020-03-05'),
+('Impressora HP', 'HP', 120, 'Informática', '2019-12-15');
+
+-- Vendas
+INSERT INTO venda (id_cliente, id_produto, quantidade, data_venda) VALUES
+(1, 1, 1, '2023-01-10'),(2, 2, 2, '2023-02-15'),(3, 3, 1, '2023-03-05'),
+(1, 4, 3, '2023-03-20'),(4, 3, 1, '2023-02-15');
+
+-- 3º Questão ) -   manipulação de tabelas/dados- Executar as alterações
+-- A) Alter Table – excluir coluna
+ALTER TABLE produto DROP COLUMN categoria;
+-- B) Alter Table – adicionar coluna
+ALTER TABLE produto ADD COLUMN data_cadastro DATE; --Por que está acontecendo esse erro?
+ALTER TABLE cliente ADD COLUMN data_registro TIMESTAMP DEFAULT CURRENT_TIMESTAMP;
+-- C) Alter Table – mudar nome de coluna
+ALTER TABLE produto CHANGE COLUMN nome titulo VARCHAR(100);
+ALTER TABLE cliente CHANGE COLUMN telefone celular VARCHAR(20);
+-- D) Alter Table – mudar atributo de coluna
+ALTER TABLE produto MODIFY COLUMN marca VARCHAR(100);
+ALTER TABLE cliente MODIFY COLUMN email VARCHAR(150);
+-- E) Delete – excluir linha específica -
+DELETE FROM produto WHERE id = 4; -- Qual o erro? O que fazer para excluir esse produto?
+--F) Update – atualizar valores
+UPDATE produto SET preco = 3600 WHERE id = 1;
+UPDATE cliente SET nome = 'Maria Silva', email = 'mariasilva@email.com' WHERE id = 2;
+-- 4) Consultas (SELECTs) com múltiplas tabelas
+-- 1) Listar todas as vendas com nome do cliente e produto.
+-- 2) Exibir cliente, cidade e produto vendidos na data de 2023-02-15.
+-- 3) Total gasto por cliente.
+-- 4) Clientes que compraram produtos da categoria "Informática".
+-- 5) Quantidade de produtos vendidos por categoria.
+-- 6) Cliente que comprou mais itens.
+-- 7) Produto mais vendido.
+-- 8) Vendas feitas em março de 2023.
+-- 9) Qual o endereço de entrega da venda de id=1.
+-- 10) Total de vendas (R$) por cidade.
