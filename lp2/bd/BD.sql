@@ -104,14 +104,27 @@ DELETE FROM produto WHERE id = 4;
 --F) Update – atualizar valores
 UPDATE produto SET preco = 3600 WHERE id_pro = 1;
 UPDATE cliente SET nome = 'Maria Silva', email = 'mariasilva@email.com' WHERE id_cli = 2;
+
 -- 4) Consultas (SELECTs) com múltiplas tabelas
 -- 1) Listar todas as vendas com nome do cliente e produto.
+select venda.id, cliente.nome, produto.titulo from venda join cliente on venda.id = cliente.id_cli join produto on cliente.id_cli = produto.id_pro;
+
 -- 2) Exibir cliente, cidade e produto vendidos na data de 2023-02-15.
+
+
 -- 3) Total gasto por cliente.
+
 -- 4) Clientes que compraram produtos da categoria "Informática".
+
 -- 5) Quantidade de produtos vendidos por categoria.
+
 -- 6) Cliente que comprou mais itens.
+
 -- 7) Produto mais vendido.
+
 -- 8) Vendas feitas em março de 2023.
+
 -- 9) Qual o endereço de entrega da venda de id=1.
+
 -- 10) Total de vendas (R$) por cidade.
+
