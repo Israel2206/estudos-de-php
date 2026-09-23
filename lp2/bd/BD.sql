@@ -110,21 +110,29 @@ UPDATE cliente SET nome = 'Maria Silva', email = 'mariasilva@email.com' WHERE id
 select venda.id, cliente.nome, produto.titulo from venda join cliente on venda.id = cliente.id_cli join produto on cliente.id_cli = produto.id_pro;
 
 -- 2) Exibir cliente, cidade e produto vendidos na data de 2023-02-15.
+select cliente.nome, endereco.cidade, venda.data_venda from cliente join endereco on cliente.id_cli = endereco.id_end join venda on cliente.id_cli = venda.id_cliente where venda.data_venda = '2023-02-15';
 
+-- 3) Total gasto por cliente
+select cliente.nome, SUM(venda.quantidade * produto.preco) as total_gasto from cliente join venda on cliente.id_cli = venda.id_cliente join produto on venda.id_produto = produto.id_pro group by cliente.id_cli, cliente.nome;
 
--- 3) Total gasto por cliente.
+-- 4) clientes que compraram produtos da categoria "informática"
+select cliente.nome, produto.titulo from cliente join venda on cliente.id_cli = venda.id_cliente join produto on venda.id_produto = produto.id_pro where produto.categoria = 'informática';
 
--- 4) Clientes que compraram produtos da categoria "Informática".
+-- 5) quantidade de produtos vendidos por categoria
+select produto.categoria, sum(venda.quantidade) as quantidade_vendida from venda join produto on venda.id_produto = produto.id_pro group by produto.categoria;
 
--- 5) Quantidade de produtos vendidos por categoria.
+-- 6) cliente que comprou mais itens
+select cliente.nome, sum(venda.quantidade) as total_itens from cliente join venda on cliente.id_cli = venda.id_cliente group by cliente.id_cli, cliente.nome order by total_itens desc limit 1;
 
--- 6) Cliente que comprou mais itens.
+-- 7) produto mais vendido
+select produto.titulo, sum(venda.quantidade) as total_vendido from produto join venda on produto.id_pro = venda.id_produto group by produto.id_pro, produto.titulo order by total_vendido desc limit 1;
 
--- 7) Produto mais vendido.
+-- 8) vendas feitas em março de 2023
+select * from venda where data_venda between '2023-03-01' and '2023-03-31';
 
--- 8) Vendas feitas em março de 2023.
+-- 9) qual o endereço de entrega da venda de id=1
+select endereco.logradouro, endereco.numero, endereco.bairro, endereco.cidade, endereco.estado, endereco.cep from venda join endereco on venda.id_cliente = endereco.id_cliente where venda.id = 1;
 
--- 9) Qual o endereço de entrega da venda de id=1.
-
--- 10) Total de vendas (R$) por cidade.
+-- 10) total de vendas (r$) por cidade
+select endereco.cidade, sum(venda.quantidade * produto.preco) as total_vendas from venda join produto on venda.id_produto = produto.id_pro join endereco on venda.id_cliente = endereco.id_cliente group by endereco.cidade;
 
